@@ -1,5 +1,6 @@
 use crate::formatter;
 use serde::Serialize;
+use serde_json::*;
 use spectral::prelude::*;
 
 #[test]
