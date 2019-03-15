@@ -1,0 +1,12 @@
+[package]
+name = "canonical_json_formatter"
+version = "0.1.0"
+authors = ["Radu Matei <root@radu.sh>"]
+edition = "2018"
+
+[dependencies]
+serde = "1.0"
+serde_derive = "1.0"
+serde_json = "1.0"
+spectral = "0.6"
+itoa = "0.4.3"
