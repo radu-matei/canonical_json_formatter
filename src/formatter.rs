@@ -1,12 +1,12 @@
 use itoa;
-use serde_json::ser::Formatter;
+use serde_json::*;
 use std::io;
 
 pub struct Canonical {}
 
 /// This formatter follows the IETF working draft for Canonical JSON
 /// https://tools.ietf.org/html/draft-rundgren-json-canonicalization-scheme-05
-impl Formatter for Canonical {
+impl ser::Formatter for Canonical {
     /// Writes a `null` value to the specified writer.
     #[inline]
     fn write_null<W: ?Sized>(&mut self, writer: &mut W) -> io::Result<()>
