@@ -22,25 +22,25 @@ function checkRequested(e, p) {
         "cargo test"
     ];
 
-    // build.host.name = "virtual-kubelet";
-    // build.resourceRequests.cpu = "1";
-    // build.resourceRequests.memory = "1G";
+    build.host.name = "virtual-kubelet";
+    build.resourceRequests.cpu = "1";
+    build.resourceRequests.memory = "1G";
 
     // For convenience, we'll create three jobs: one for each GitHub Check stage.
     const start = new Job("start-run", checkRunImage);
     start.env = env;
     start.env.CHECK_SUMMARY = "Beginning test run";
 
-    // start.host.name = "virtual-kubelet";
-    // start.resourceRequests.cpu = "1";
-    // start.resourceRequests.memory = "1G";
+    start.host.name = "virtual-kubelet";
+    start.resourceRequests.cpu = "1";
+    start.resourceRequests.memory = "1G";
 
     const end = new Job("end-run", checkRunImage);
     end.env = env;
 
-    // end.host.name = "virtual-kubelet";
-    // end.resourceRequests.cpu = "1";
-    // end.resourceRequests.memory = "1G";
+    end.host.name = "virtual-kubelet";
+    end.resourceRequests.cpu = "1";
+    end.resourceRequests.memory = "1G";
 
     // Now we run the jobs in order:
     // - Notify GitHub of start
